@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard Siswa - Ekstrakurikuler Mutiara Ilmu</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="siswa-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="siswa-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <img id="navUserPhoto" src="assets/images/blankuser.jpg" alt="profile" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #57B657;" />
+                            <span id="navUserName" class="fw-bold text-dark">Muhammad Fadhil</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="siswa-datadiri.html">
+                                <i class="fas fa-id-card text-success me-2"></i> Data Diri 
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="siswa-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-datadiri.html">
+                            <i class="fas fa-user-circle fa-lg"></i>
+                            <span class="menu-title ps-3">Data Diri</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-daftarekskul.html">
+                            <i class="fas fa-clipboard-list fa-lg"></i>
+                            <span class="menu-title ps-3">Ekstrakurikuler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-status.html">
+                            <i class="fas fa-history fa-lg"></i>
+                            <span class="menu-title ps-3">Status Pendaftar</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <!-- Header -->
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                    <h3 class="font-weight-bold">Selamat Datang, <span id="welcomeUserName" class="text-success">Muhammad Fadhil</span>!</h3>
+                                    <h6 class="font-weight-normal mb-0">Portal Pendaftaran Ekstrakurikuler SMK Mutiara Ilmu Makassar</span></h6>
+                                </div>
+                                <div class="col-12 col-xl-4 text-xl-end">
+                                    <div class="btn btn-sm btn-light bg-white border">
+                                        <i class="mdi mdi-calendar text-success me-1"></i> <span id="currentDate"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Registration Status Overview Card -->
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="card border-0 shadow-sm rounded-4 mb-4" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
+                                        <div class="card-body p-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-8">
+                                                    <div class="d-inline-flex align-items-center gap-2 bg-white bg-opacity-25 px-3 py-1 rounded-pill small mb-3">
+                                                        <i class="fas fa-bullhorn"></i> Status Pendaftaran Anda
+                                                    </div>
+                                                    <h3 class="fw-bold mb-2" id="heroStatusText">Pendaftaran Berhasil Terkirim!</h3>
+                                                    <p class="mb-3 text-white text-opacity-90">
+                                                        Pilihan Ekskul 1 (<strong id="heroEkskul1">ART MEDIA</strong>): <span class="badge bg-white text-success fw-bold px-2 py-1">DITERIMA</span> | 
+                                                        Pilihan 2 (<strong id="heroEkskul2">FUTSAL</strong>): <span class="badge bg-warning text-dark fw-bold px-2 py-1">PENDING</span>
+                                                    </p>
+                                                    <div class="d-flex flex-wrap gap-2">
+                                                        <a href="siswa-status.html" class="btn btn-light text-success fw-bold">
+                                                            <i class="fas fa-list-check me-1"></i> Cek Status & Link Grup WA
+                                                        </a>
+                                                        <a href="cetak-bukti.html" class="btn btn-outline-light">
+                                                            <i class="fas fa-print me-1"></i> Cetak Bukti Pendaftaran
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 text-center d-none d-md-block">
+                                                    <img src="images/ekskul.svg" alt="Illustration" style="max-height: 140px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Steps Guide -->
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <h4 class="font-weight-bold mb-4">Langkah-Langkah Pendaftaran</h4>
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3 mb-4">
+                                            <div class="card h-100 shadow-sm border-0 rounded-4">
+                                                <div class="card-body text-center p-4">
+                                                    <div class="badge bg-success bg-opacity-10 text-success p-3 rounded-circle mb-3">
+                                                        <i class="fas fa-user-plus fa-2x"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold">1. Membuat Akun</h5>
+                                                    <p class="text-muted small">Buat akun siswa dan login untuk memulai proses pendaftaran ekstrakurikuler.</p>
+                                                    <span class="badge bg-success text-white"><i class="fas fa-check me-1"></i> Selesai</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 mb-4">
+                                            <div class="card h-100 shadow-sm border-0 rounded-4">
+                                                <div class="card-body text-center p-4">
+                                                    <div class="badge bg-primary bg-opacity-10 text-primary p-3 rounded-circle mb-3">
+                                                        <i class="fas fa-user-edit fa-2x"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold">2. Isi Data Diri</h5>
+                                                    <p class="text-muted small">Lengkapi informasi biodata, NIS, kelas, nomor WhatsApp, dan pas foto resmi.</p>
+                                                    <a href="siswa-datadiri.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-eye me-1"></i> Lihat Data</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 mb-4">
+                                            <div class="card h-100 shadow-sm border-0 rounded-4">
+                                                <div class="card-body text-center p-4">
+                                                    <div class="badge bg-warning bg-opacity-10 text-warning p-3 rounded-circle mb-3">
+                                                        <i class="fas fa-tasks fa-2x"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold">3. Memilih Ekskul</h5>
+                                                    <p class="text-muted small">Tentukan ekstrakurikuler prioritas ke-1 dan ke-2 beserta alasan pendaftaran.</p>
+                                                    <a href="siswa-daftarekskul.html" class="btn btn-sm btn-outline-warning text-dark"><i class="fas fa-list me-1"></i> Form Ekskul</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 mb-4">
+                                            <div class="card h-100 shadow-sm border-0 rounded-4">
+                                                <div class="card-body text-center p-4">
+                                                    <div class="badge bg-info bg-opacity-10 text-info p-3 rounded-circle mb-3">
+                                                        <i class="fas fa-print fa-2x"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold">4. Konfirmasi & Cetak</h5>
+                                                    <p class="text-muted small">Pantau status seleksi pembina, gabung grup WhatsApp, lalu unduh/cetak kartu bukti.</p>
+                                                    <a href="siswa-status.html" class="btn btn-sm btn-outline-info"><i class="fas fa-receipt me-1"></i> Cek Bukti</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ekskul Info & Contacts -->
+                            <div class="row align-items-center mt-3 bg-white p-4 rounded-4 shadow-sm mx-0">
+                                <div class="col-md-4 text-center mb-3 mb-md-0">
+                                    <img src="assets/images/user.svg" style="width: 100%; max-width: 280px;" alt="Ilustrasi Siswa">
+                                </div>
+                                <div class="col-md-8 ps-md-4">
+                                    <h4 class="font-weight-bold text-dark">Informasi Penting Kegiatan Ekstrakurikuler</h4>
+                                    <p class="text-muted" style="font-size: 15px;">
+                                        Setiap siswa SMK Mutiara Ilmu diperkenankan memilih maksimal 2 kegiatan ekstrakurikuler (1 wajib minat utama dan 1 penunjang). Pastikan jadwal kegiatan tidak saling berbenturan.
+                                    </p>
+                                    <p class="text-muted" style="font-size: 15px;">
+                                        Setelah dinyatakan <span class="badge bg-success">DITERIMA</span> oleh pembina ekskul, segera klik tombol bergabung ke <strong>Grup WhatsApp</strong> resmi untuk menerima jadwal latihan perdana dan arahan perlengkapan.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current date
+            const dateStr = new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('currentDate').innerText = dateStr;
+
+            // Load reactive user data
+            if (window.MutilStore) {
+                const user = window.MutilStore.getCurrentUser();
+                if (user) {
+                    document.getElementById('welcomeUserName').innerText = user.nama_lengkap || user.username;
+                    document.getElementById('navUserName').innerText = (user.nama_lengkap || user.username).split(' ')[0];
+                    if (user.foto) {
+                        document.getElementById('navUserPhoto').src = user.foto;
+                    }
+                    if (user.pendaftaran) {
+                        const eks1 = window.MutilStore.getEkskulById(user.pendaftaran.ekskul_1);
+                        const eks2 = window.MutilStore.getEkskulById(user.pendaftaran.ekskul_2);
+                        if (eks1) document.getElementById('heroEkskul1').innerText = eks1.nama_ekskul;
+                        if (eks2) document.getElementById('heroEkskul2').innerText = eks2.nama_ekskul;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard Pembina - Ekstrakurikuler Mutil</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="pembina-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="pembina-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <i class="fas fa-user-shield text-success fa-lg"></i>
+                            <span id="pembinaNavName" class="fw-bold text-dark">Budi Santoso (ART MEDIA)</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="pembina-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pembina-pendaftar.html">
+                            <i class="fas fa-list fa-lg"></i>
+                            <span class="menu-title ps-3">Pendaftar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pembina-diterima.html">
+                            <i class="fas fa-users fa-lg"></i>
+                            <span class="menu-title ps-3">Pendaftar Diterima</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                                    <h3 class="font-weight-bold">Selamat Datang, <span id="welcomePembinaName" class="text-success">Budi Santoso</span>!</h3>
+                                    <h6 class="font-weight-normal mb-0">Portal Pembina Ekstrakurikuler <strong id="activeEkskulTitle" class="text-success">ART MEDIA</strong> - SMK Mutiara Ilmu</h6>
+                                </div>
+                                <div class="col-12 col-xl-4 text-xl-end">
+                                    <div class="btn btn-sm btn-light bg-white border">
+                                        <i class="mdi mdi-calendar text-success me-1"></i> <span id="currentDate"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Switch Ekskul Demo Dropdown -->
+                            <div class="card border-0 shadow-sm rounded-4 mt-4 mb-4 bg-light">
+                                <div class="card-body p-3 d-flex flex-wrap align-items-center justify-content-between gap-3">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fas fa-exchange-alt text-success"></i>
+                                        <span class="fw-bold small text-dark">Beralih Pembina Ekskul (Demo):</span>
+                                        <select id="switchEkskulSelect" class="form-select form-select-sm" style="width: 250px;">
+                                            <!-- Dynamically filled -->
+                                        </select>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="small text-muted">Status Pendaftaran:</span>
+                                        <span id="badgeStatusEkskul" class="badge bg-success px-3 py-2">AKTIF (BUKA)</span>
+                                        <button id="btnToggleStatusEkskul" class="btn btn-sm btn-outline-danger">
+                                            Tutup Pendaftaran
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stat Cards -->
+                            <div class="row mt-2">
+                                <div class="col-md-4 mb-4 stretch-card transparent">
+                                    <div class="card bg-success text-white shadow-sm border-0 rounded-4">
+                                        <div class="card-body d-flex align-items-center p-4">
+                                            <div class="flex-grow-1">
+                                                <p class="mb-2 text-white text-opacity-75 font-weight-bold">Total Pendaftar</p>
+                                                <h2 class="mb-0 fw-bold fs-30" id="statTotalPendaftar">6</h2>
+                                                <small class="text-white text-opacity-75">Seluruh peminat ekskul</small>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-list fa-3x text-light opacity-50"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4 stretch-card transparent">
+                                    <div class="card shadow-sm border-0 rounded-4 text-white" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                                        <div class="card-body d-flex align-items-center p-4">
+                                            <div class="flex-grow-1">
+                                                <p class="mb-2 text-white text-opacity-75 font-weight-bold">Siswa Diterima</p>
+                                                <h2 class="mb-0 fw-bold fs-30" id="statTotalDiterima">3</h2>
+                                                <small class="text-white text-opacity-75">Resmi menjadi anggota</small>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-user-check fa-3x text-light opacity-50"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4 stretch-card transparent">
+                                    <div class="card shadow-sm border-0 rounded-4 text-white" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">
+                                        <div class="card-body d-flex align-items-center p-4">
+                                            <div class="flex-grow-1">
+                                                <p class="mb-2 text-white text-opacity-75 font-weight-bold">Menunggu / Ditolak</p>
+                                                <h2 class="mb-0 fw-bold fs-30" id="statTotalPendingDitolak">3</h2>
+                                                <small class="text-white text-opacity-75">Perlu diverifikasi</small>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-user-clock fa-3x text-light opacity-50"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- WA Group Quick Config -->
+                            <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white">
+                                <div class="card-body p-4">
+                                    <h5 class="fw-bold mb-3 text-dark"><i class="fab fa-whatsapp text-success me-2"></i>Tautan Grup WhatsApp Resmi Anggota</h5>
+                                    <p class="text-muted small">Tautan ini otomatis dapat diakses oleh siswa yang berstatus DITERIMA pada akun siswa mereka.</p>
+                                    <form id="formWaQuick" class="d-flex gap-2">
+                                        <input type="url" id="inputWaLink" class="form-control" placeholder="https://chat.whatsapp.com/..." required>
+                                        <button type="submit" class="btn btn-success text-white px-4 text-nowrap">
+                                            <i class="fas fa-save me-1"></i> Perbarui Link WA
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- System About Info -->
+                            <div class="row align-items-center mt-3 bg-white p-4 rounded-4 shadow-sm mx-0">
+                                <div class="col-md-5 text-center mb-3 mb-md-0">
+                                    <img src="assets/images/admin.svg" style="width: 100%; max-width: 320px;" alt="Ilustrasi Pembina">
+                                </div>
+                                <div class="col-md-7 ps-md-4">
+                                    <h4 class="font-weight-bold text-dark">Panduan Pembina Ekstrakurikuler</h4>
+                                    <p class="text-muted" style="font-size: 15px;">
+                                        Sebagai pembina, Anda memiliki wewenang untuk meninjau formulir pendaftaran siswa, melihat data diri lengkap dan motivasi siswa, menentukan kelulusan seleksi (Terima / Tolak), serta mengunduh rekap laporan resmi dalam format cetak standar sekolah.
+                                    </p>
+                                    <div class="d-flex gap-2 mt-3">
+                                        <a href="pembina-pendaftar.html" class="btn btn-success text-white">
+                                            <i class="fas fa-user-check me-1"></i> Verifikasi Pendaftar
+                                        </a>
+                                        <a href="pembina-diterima.html" class="btn btn-outline-success">
+                                            <i class="fas fa-users me-1"></i> Data Siswa Diterima
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        let currentEkskulId = '1';
+
+        function updatePembinaUI() {
+            if (!window.MutilStore) return;
+            const ekskul = window.MutilStore.getEkskulById(currentEkskulId);
+            if (!ekskul) return;
+
+            document.getElementById('activeEkskulTitle').innerText = ekskul.nama_ekskul;
+            document.getElementById('welcomePembinaName').innerText = ekskul.pembina;
+            document.getElementById('pembinaNavName').innerText = ekskul.pembina + ' (' + ekskul.nama_ekskul + ')';
+            document.getElementById('inputWaLink').value = ekskul.link_group || '';
+
+            // Status badge & button
+            const badge = document.getElementById('badgeStatusEkskul');
+            const btnToggle = document.getElementById('btnToggleStatusEkskul');
+            if (ekskul.status === 'aktif') {
+                badge.className = 'badge bg-success px-3 py-2';
+                badge.innerText = 'AKTIF (BUKA)';
+                btnToggle.className = 'btn btn-sm btn-outline-danger';
+                btnToggle.innerText = 'Tutup Pendaftaran';
+            } else {
+                badge.className = 'badge bg-secondary px-3 py-2';
+                badge.innerText = 'NONAKTIF (DITUTUP)';
+                btnToggle.className = 'btn btn-sm btn-outline-success';
+                btnToggle.innerText = 'Buka Pendaftaran';
+            }
+
+            // Calculate stats
+            const allApplicants = window.MutilStore.getPendaftarByEkskul(currentEkskulId);
+            const accepted = allApplicants.filter(p => p.status === 'diterima');
+            const pendingOrRejected = allApplicants.filter(p => p.status !== 'diterima');
+
+            document.getElementById('statTotalPendaftar').innerText = allApplicants.length;
+            document.getElementById('statTotalDiterima').innerText = accepted.length;
+            document.getElementById('statTotalPendingDitolak').innerText = pendingOrRejected.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateStr = new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            document.getElementById('currentDate').innerText = dateStr;
+
+            if (window.MutilStore) {
+                const ekskuls = window.MutilStore.getEkskuls();
+                const sel = document.getElementById('switchEkskulSelect');
+                sel.innerHTML = ekskuls.map(e => `<option value="${e.id}">${e.nama_ekskul} (${e.pembina})</option>`).join('');
+                sel.value = currentEkskulId;
+
+                sel.addEventListener('change', function() {
+                    currentEkskulId = this.value;
+                    sessionStorage.setItem('mutil_pembina_ekskul_id', currentEkskulId);
+                    updatePembinaUI();
+                    window.showMutilToast('Beralih ke ekskul: ' + window.MutilStore.getEkskulById(currentEkskulId).nama_ekskul);
+                });
+
+                const savedEks = sessionStorage.getItem('mutil_pembina_ekskul_id');
+                if (savedEks && window.MutilStore.getEkskulById(savedEks)) {
+                    currentEkskulId = savedEks;
+                    sel.value = currentEkskulId;
+                }
+
+                updatePembinaUI();
+            }
+
+            document.getElementById('btnToggleStatusEkskul').addEventListener('click', function() {
+                if (window.MutilStore) {
+                    const newStatus = window.MutilStore.toggleEkskulStatus(currentEkskulId);
+                    updatePembinaUI();
+                    window.showMutilToast('Status pendaftaran diubah menjadi: ' + newStatus.toUpperCase());
+                }
+            });
+
+            document.getElementById('formWaQuick').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const link = document.getElementById('inputWaLink').value;
+                if (window.MutilStore) {
+                    window.MutilStore.updateWaLink(currentEkskulId, link);
+                    window.showMutilToast('Tautan grup WhatsApp berhasil diperbarui!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

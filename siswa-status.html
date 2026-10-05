@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Status Pendaftaran Siswa - Ekstrakurikuler Mutiara Ilmu</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="siswa-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="siswa-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <img id="navUserPhoto" src="assets/images/blankuser.jpg" alt="profile" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #57B657;" />
+                            <span id="navUserName" class="fw-bold text-dark">Muhammad Fadhil</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="siswa-datadiri.html">
+                                <i class="fas fa-id-card text-success me-2"></i> Data Diri 
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-datadiri.html">
+                            <i class="fas fa-user-circle fa-lg"></i>
+                            <span class="menu-title ps-3">Data Diri</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-daftarekskul.html">
+                            <i class="fas fa-clipboard-list fa-lg"></i>
+                            <span class="menu-title ps-3">Ekstrakurikuler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="siswa-status.html">
+                            <i class="fas fa-history fa-lg"></i>
+                            <span class="menu-title ps-3">Status Pendaftar</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <h3 class="fw-bold mb-1 text-dark">Status Pendaftaran Ekstrakurikuler</h3>
+                            <p class="text-muted mb-0 small">Pantau status seleksi dan akses tautan grup WhatsApp resmi pembina</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="siswa-daftarekskul.html" class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-edit me-1"></i> Ubah Pilihan
+                            </a>
+                            <a href="cetak-bukti.html" class="btn btn-success text-white btn-sm shadow-sm">
+                                <i class="fas fa-print me-1"></i> Cetak Bukti Pendaftaran
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Student Info Card -->
+                    <div class="card shadow-sm border-0 rounded-4 mb-4">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-2 mb-md-0">
+                                    <label class="text-muted small fw-bold">Nama Siswa</label>
+                                    <input type="text" id="statusNamaSiswa" class="form-control bg-light" readonly>
+                                </div>
+                                <div class="col-md-4 mb-2 mb-md-0">
+                                    <label class="text-muted small fw-bold">Kelas</label>
+                                    <input type="text" id="statusKelasSiswa" class="form-control bg-light" readonly>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="text-muted small fw-bold">NIS</label>
+                                    <input type="text" id="statusNisSiswa" class="form-control bg-light" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Table Card -->
+                    <div class="card shadow-sm border-0 rounded-4">
+                        <div class="card-body p-4">
+                            <h4 class="text-center fw-bold mb-4 text-dark">DAFTAR EKSTRAKURIKULER YANG DIPILIH</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th width="5%" class="text-center">No</th>
+                                            <th width="25%">Nama Ekstrakurikuler</th>
+                                            <th width="15%">Status Seleksi</th>
+                                            <th width="30%">Alasan Pendaftaran</th>
+                                            <th width="25%">Grup WhatsApp Resmi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableStatusBody">
+                                        <!-- Rendered dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-top d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                <div class="text-muted small">
+                                    <i class="fas fa-info-circle text-success me-1"></i> Tanda tangan digital kartu pendaftaran otomatis aktif begitu salah satu ekskul berstatus <strong>DITERIMA</strong>.
+                                </div>
+                                <a href="cetak-bukti.html" class="btn btn-success text-white px-4 py-2">
+                                    <i class="fas fa-print me-1"></i> Buka Tampilan Cetak Kartu
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.MutilStore) return;
+            const user = window.MutilStore.getCurrentUser();
+
+            if (user) {
+                document.getElementById('statusNamaSiswa').value = user.nama_lengkap || user.username;
+                document.getElementById('statusKelasSiswa').value = user.kelas || '-';
+                document.getElementById('statusNisSiswa').value = user.nis || '-';
+                document.getElementById('navUserName').innerText = (user.nama_lengkap || user.username).split(' ')[0];
+                if (user.foto) document.getElementById('navUserPhoto').src = user.foto;
+            }
+
+            const tbody = document.getElementById('tableStatusBody');
+            const items = [];
+
+            if (user && user.pendaftaran) {
+                if (user.pendaftaran.ekskul_1) {
+                    const e1 = window.MutilStore.getEkskulById(user.pendaftaran.ekskul_1);
+                    items.push({
+                        pilihan: 'Pilihan 1 (Utama)',
+                        nama: e1 ? e1.nama_ekskul : 'Ekstrakurikuler 1',
+                        status: user.pendaftaran.status_1 || 'pending',
+                        alasan: user.pendaftaran.alasan_1 || '-',
+                        wa: e1 ? e1.link_group : '#'
+                    });
+                }
+                if (user.pendaftaran.ekskul_2) {
+                    const e2 = window.MutilStore.getEkskulById(user.pendaftaran.ekskul_2);
+                    items.push({
+                        pilihan: 'Pilihan 2 (Cadangan)',
+                        nama: e2 ? e2.nama_ekskul : 'Ekstrakurikuler 2',
+                        status: user.pendaftaran.status_2 || 'pending',
+                        alasan: user.pendaftaran.alasan_2 || '-',
+                        wa: e2 ? e2.link_group : '#'
+                    });
+                }
+            }
+
+            if (items.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-muted">Belum ada data pendaftaran ekskul. Silakan daftar terlebih dahulu.</td></tr>`;
+            } else {
+                tbody.innerHTML = items.map((item, idx) => {
+                    let badgeClass = 'bg-warning text-dark';
+                    let statusLabel = 'MENUNGGU VERIFIKASI';
+                    if (item.status === 'diterima') {
+                        badgeClass = 'bg-success text-white';
+                        statusLabel = 'DITERIMA';
+                    } else if (item.status === 'ditolak') {
+                        badgeClass = 'bg-danger text-white';
+                        statusLabel = 'DITOLAK';
+                    }
+
+                    let waContent = '';
+                    if (item.status === 'diterima') {
+                        waContent = `<a href="${item.wa}" target="_blank" class="btn btn-sm btn-success text-white"><i class="fab fa-whatsapp me-1"></i> Gabung Grup WA</a>`;
+                    } else if (item.status === 'ditolak') {
+                        waContent = `<span class="badge bg-light text-danger border">Tidak Lolos Seleksi</span>`;
+                    } else {
+                        waContent = `<span class="badge bg-light text-muted border"><i class="fas fa-clock me-1"></i> Menunggu Konfirmasi</span>`;
+                    }
+
+                    return `
+                        <tr>
+                            <td class="text-center fw-bold">${idx + 1}</td>
+                            <td>
+                                <strong class="text-dark">${item.nama}</strong><br>
+                                <span class="small text-muted">${item.pilihan}</span>
+                            </td>
+                            <td><span class="badge ${badgeClass} px-3 py-2 fw-bold">${statusLabel}</span></td>
+                            <td><small class="text-muted">${item.alasan}</small></td>
+                            <td>${waContent}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+        });
+    </script>
+</body>
+</html>

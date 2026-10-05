@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Ekstrakurikuler Mutiara Ilmu">
+    <link rel="shortcut icon" href="assets/images/logo1.png">
+    <meta name="description" content="Sistem Informasi Ekstrakurikuler - Platform Pendaftaran Ekstrakurikuler Online untuk Siswa" />
+    <meta name="keywords" content="ekstrakurikuler, pendaftaran, siswa, sekolah, ekskul, mutiara ilmu" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/glightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <title>Ekstrakurikuler Mutiara Ilmu &mdash; Kembangkan Bakatmu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+</head>
+
+<body>
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+    <nav class="site-nav">
+        <div class="container">
+            <div class="menu-bg-wrap">
+                <div class="site-navigation">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-2">
+                            <a href="index.html" class="logo m-0 float-start">Mutiara<span class="text-success">Ilmu</span></a>
+                        </div>
+                        <div class="col-8 text-center ">
+                            <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+                                <li class="active"><a href="index.html">Beranda</a></li>
+                                <li><a href="#ekstrakurikuler">Ekstrakurikuler</a></li>
+                                <li><a href="#fitur">Fitur</a></li>
+                                <li><a href="#tentang">Tentang</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-2 text-end">
+                            <a href="login.html" class="btn btn-success btn-sm me-2 d-none d-lg-inline-block">Login</a>
+                            <a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="hero overlay">
+        <img src="images/blob.png" alt="" class="img-fluid blob">
+        <div class="container">
+            <div class="row align-items-center justify-content-between pt-5">
+                <div class="col-lg-6 text-center text-lg-start pe-lg-5">
+                    <h1 class="heading text-white mb-3" data-aos="fade-up">Temukan dan Kembangkan Bakatmu Bersama Kami</h1>
+                    <p class="text-white mb-5" data-aos="fade-up" data-aos-delay="100">Sistem Informasi Ekstrakurikuler Mutiara Ilmu menyediakan platform digital untuk memudahkan siswa mendaftar dan mengikuti berbagai kegiatan ekstrakurikuler yang tersedia.</p>
+                    <div class="align-items-center mb-5 mm" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <a href="login.html" class="btn btn-outline-white-reverse"><i class="fas fa-sign-in-alt me-1"></i> Login & Daftar</a>
+                            <a href="siswa-dashboard.html" class="btn btn-success text-white"><i class="fas fa-user-graduate me-1"></i> Demo Panel Siswa</a>
+                            <a href="pembina-dashboard.html" class="btn btn-warning text-dark"><i class="fas fa-user-shield me-1"></i> Demo Panel Pembina</a>
+                            <a href="admin-dashboard.html" class="btn btn-info text-white"><i class="fas fa-crown me-1"></i> Demo Panel Admin</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img">
+                        <img src="images/ekskul.svg" alt="Ekstrakurikuler" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="ekstrakurikuler">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="heading text-success">Ekstrakurikuler Kami</h2>
+                    <p>Pilih dan ikuti kegiatan ekstrakurikuler sesuai minat dan bakatmu</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- ART MEDIA -->
+                <div class="col-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/artmedia.jpg" class="img-fluid rounded">
+                            <h3 class="card-title">ART MEDIA</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Menjadi wadah kreatif yang mendukung siswa SMK dalam mengembangkan potensi seni media melalui inovasi dan teknologi.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#artMediaModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENGLISH CLUB -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/Email.png" class="img-fluid rounded">
+                            <h3 class="card-title">ENGLISH CLUB (EMAIL)</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Menciptakan lingkungan berbahasa Inggris yang interaktif dan mengembangkan keterampilan berbahasa internasional siswa.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#englishClubModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FUTSAL -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/futsal.jpg" class="img-fluid rounded">
+                            <h3 class="card-title">FUTSAL</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Membentuk tim futsal yang tangguh, sportif, dan mampu berprestasi di tingkat regional maupun nasional.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#futsalModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- PASKIBRA -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/paskib.jpg" class="img-fluid rounded">
+                            <h3 class="card-title">PASKIBRA</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Menjadi pasukan pengibar bendera yang disiplin, patriotik, dan menjunjung tinggi nilai-nilai nasionalisme.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#paskibModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PMR -->
+                <div class="col-4 mb-4" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/pmr.png" class="img-fluid rounded">
+                            <h3 class="card-title">PMR</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Menjadi generasi muda yang peduli, tanggap, dan berperan aktif dalam memberikan pertolongan pertama serta meningkatkan kesehatan masyarakat.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#pmrModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRAMUKA -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/pramuka.jpg" class="img-fluid rounded">
+                            <h3 class="card-title">PRAMUKA</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Membentuk generasi muda yang berkarakter, mandiri, peduli, dan bertanggung jawab sesuai kode kehormatan Pramuka.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#pramukaModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- SANGGAR SENI -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/sanggar.jpg" class="img-fluid rounded">
+                            <h3 class="card-title">SANGGAR SENI</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Menjadi pusat pengembangan dan pelestarian seni yang menghubungkan budaya, inovatif, kreatif, yang berkelanjutan.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#sanggarModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAKRAW -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/takraw.png" class="img-fluid rounded">
+                            <h3 class="card-title">TAKRAW</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Mengembangkan bakat dan prestasi dalam olahraga sepak takraw serta melestarikan olahraga tradisional Indonesia.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#takrawModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rohis Akhwat -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <span class="bi-globe fs-1 text-success mb-3"></span>
+                            <h3 class="card-title">Rohis Akhwat</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Penjelasan tentang rohis Akhwat.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#AkhwatModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Rohis Ikhwa -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <span class="bi-globe fs-1 text-success mb-3"></span>
+                            <h3 class="card-title">Rohis Ikhwan</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Tentang Rohis Ikhwan</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#IkhwaModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rohkris -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <span class="bi-globe fs-1 text-success mb-3"></span>
+                            <h3 class="card-title">Rohkris</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Tentang Rohkris.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#RohkrisModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exis -->
+                <div class="col-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="images/Eksis MI.jpg" class="img-fluid rounded">
+                            <h3 class="card-title">EKsis MI</h3>
+                            <div class="card-text">
+                                <h6 class="text-success mt-3">Visi</h6>
+                                <p>Menjadi wadah dalam menuangkan pemikiran serta berekspresi dan    berinspirasi dalam bidang menulis, menyimak, berbicara, membaca dan memirsa.</p>
+                                <button class="btn btn-success btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#EksisModal">
+                                    Informasi Selengkapnya
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk ART MEDIA -->
+    <div class="modal fade" id="artMediaModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ART MEDIA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/artmedia.jpg" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Menjadi wadah kreatif yang mendukung siswa SMK dalam mengembangkan potensi seni media melalui inovasi dan teknologi.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Mendorong kreativitas siswa dalam menghasilkan karya seni media yang orisinal dan inovatif.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Rabu, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Workshop desain grafis</li>
+                                <li>Pembuatan konten kreatif</li>
+                                <li>Pameran karya seni digital</li>
+                                <li>Kompetisi desain tahunan</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/artmedia/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/artmedia/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/artmedia/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk ENGLISH CLUB -->
+    <div class="modal fade" id="englishClubModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ENGLISH CLUB (EMAIL)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/Email.png" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Menciptakan lingkungan berbahasa Inggris yang interaktif dan mengembangkan keterampilan berbahasa internasional siswa.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Memfasilitasi pembelajaran bahasa Inggris melalui kegiatan yang menarik dan meningkatkan kepercayaan diri dalam berkomunikasi.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Selasa dan Rabu, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Storytelling And Speech</li>
+                                <li>Watch And Learn Activity</li>
+                                <li>Meeting and English Area</li>
+                                <li>Mengadakan lomba antar sekolah menengah pertama berkolaborasi dengan osis</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/email/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/email/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/email/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk FUTSAL -->
+    <div class="modal fade" id="futsalModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">FUTSAL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/futsal.jpg" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Membentuk tim futsal yang tangguh, sportif, dan mampu berprestasi di tingkat regional maupun nasional.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Melatih keterampilan teknis, taktis, dan membangun karakter sportivitas serta kerjasama tim yang solid.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Selasa & Kamis, Waktu Menyesuaikan</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Latihan rutin 3x seminggu</li>
+                                <li>Turnamen internal sekolah</li>
+                                <li>Kompetisi antar sekolah</li>
+                                <li>Klinik futsal dengan pelatih profesional</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/futsal/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/futsal/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/futsal/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/futsal/4.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk PASKIBRA -->
+    <div class="modal fade" id="paskibModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">PASKIBRA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/paskib.jpg" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Menjadi pasukan pengibar bendera yang disiplin, patriotik, dan menjunjung tinggi nilai-nilai nasionalisme.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Membentuk karakter kepemimpinan, kedisiplinan, dan cinta tanah air melalui pelatihan baris-berbaris dan upacara.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Senin, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Latihan baris-berbaris rutin</li>
+                                <li>Upacara bendera setiap Senin</li>
+                                <li>Pelatihan kepemimpinan</li>
+                                <li>Lomba Paskibra antar sekolah</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/paskib/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/paskib/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk PMR -->
+    <div class="modal fade" id="pmrModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">PMR</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/pmr.png" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Menjadi generasi muda yang peduli, tanggap, dan berperan aktif dalam memberikan pertolongan pertama serta meningkatkan kesehatan masyarakat.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Meningkatkan keterampilan di kalangan remaja melalui pendidikan dan pelatihan pertolongan pertama pada anggota PMR.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Kamis, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Pelatihan pertolongan pertama</li>
+                                <li>Donor darah sukarela</li>
+                                <li>Kampanye hidup sehat</li>
+                                <li>Simulasi penanganan bencana</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/pmr/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/pmr/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/pmr/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/pmr/4.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk PRAMUKA -->
+    <div class="modal fade" id="pramukaModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">PRAMUKA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/pramuka.jpg" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Membentuk generasi muda yang berkarakter, mandiri, peduli, dan bertanggung jawab sesuai kode kehormatan Pramuka.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Menyelenggarakan kegiatan kepramukaan yang menarik dan menantang untuk mengembangkan nilai kepemimpinan dan kemandirian.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Jumat, Pukul 13:30 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Perkemahan Jumat-Sabtu (Perjusa)</li>
+                                <li>Latihan kepramukaan rutin</li>
+                                <li>Kegiatan bakti masyarakat</li>
+                                <li>Jambore daerah dan nasional</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/pramuka/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/pramuka/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/pramuka/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk SANGGAR SENI -->
+    <div class="modal fade" id="sanggarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">SANGGAR SENI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/sanggar.jpg" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Menjadi pusat pengembangan dan pelestarian seni yang menghubungkan budaya, inovatif, kreatif, yang berkelanjutan.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Mendorong dan mengembangkan bakat seni melalui pelatihan dan pendidikan yang berkualitas.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Senin, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Pementasan seni budaya</li>
+                                <li>Workshop seni tradisional dan modern</li>
+                                <li>Pentas seni tahunan</li>
+                                <li>Pelatihan tari dan musik</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/sanggar/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/sanggar/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/sanggar/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/sanggar/4.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk TAKRAW -->
+    <div class="modal fade" id="takrawModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">TAKRAW</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/takraw.png" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Mengembangkan bakat dan prestasi dalam olahraga sepak takraw serta melestarikan olahraga tradisional Indonesia.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Memberikan pelatihan sepak takraw yang terstruktur dan meningkatkan kualitas atlet untuk bersaing di kompetisi.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Rabu, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Latihan teknik dasar sepak takraw</li>
+                                <li>Latihan fisik khusus</li>
+                                <li>Turnamen antar kelas</li>
+                                <li>Kompetisi antar sekolah</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/takraw/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Rohis Akhwat -->
+    <div class="modal fade" id="AkhwatModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rohis Akhwat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/Akhwat.png" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Mengembangkan bakat dan prestasi dalam olahraga sepak takraw serta melestarikan olahraga tradisional Indonesia.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Memberikan pelatihan sepak takraw yang terstruktur dan meningkatkan kualitas atlet untuk bersaing di kompetisi.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Jumat pukul 12:00 dan Sabtu Pukul 08:00-12:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Latihan teknik dasar sepak takraw</li>
+                                <li>Latihan fisik khusus</li>
+                                <li>Turnamen antar kelas</li>
+                                <li>Kompetisi antar sekolah</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/Akhwat/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Rohis Ikhwan -->
+    <div class="modal fade" id="IkhwaModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rohis Ikhwa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/Ikhwan.png" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Mengembangkan bakat dan prestasi dalam olahraga sepak takraw serta melestarikan olahraga tradisional Indonesia.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Memberikan pelatihan sepak takraw yang terstruktur dan meningkatkan kualitas atlet untuk bersaing di kompetisi.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Rabu, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Latihan teknik dasar sepak takraw</li>
+                                <li>Latihan fisik khusus</li>
+                                <li>Turnamen antar kelas</li>
+                                <li>Kompetisi antar sekolah</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/Ikhwa/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Rohkris -->
+    <div class="modal fade" id="RohkrisModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rohkris</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/Rohkris.png" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Mengembangkan bakat dan prestasi dalam olahraga sepak takraw serta melestarikan olahraga tradisional Indonesia.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <p>Memberikan pelatihan sepak takraw yang terstruktur dan meningkatkan kualitas atlet untuk bersaing di kompetisi.</p>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Jumat, Pukul 12:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Latihan teknik dasar sepak takraw</li>
+                                <li>Latihan fisik khusus</li>
+                                <li>Turnamen antar kelas</li>
+                                <li>Kompetisi antar sekolah</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/Rohkris/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Eksis MI -->
+    <div class="modal fade" id="EksisModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eksis MI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/Eksis MI.jpg" class="img-fluid rounded mb-3">
+                            <h5 class="text-success">Visi</h5>
+                            <p>Menjadi wadah dalam menuangkan pemikiran serta berekspresi dan    berinspirasi dalam bidang menulis, menyimak, berbicara, membaca dan memirsa.</p>
+                            <h5 class="text-success">Misi</h5>
+                            <li>Mewujudkan berbagai jenis keahlian seperti 'karya ilmiah remaja’ yang bertujuan sebagai wadah siswa dalam menulis pikirkan terhadap suatu fenomena aktual, baik dalam lingkup sekolah maupun masyarakat.</li><br>
+                            <li>Melatih seni dalam  berkomunikasi yang dilakukan secara lisan untuk menyampaikan ide, gagasan, pesan dan pendapat yang bertujuan menginformasikan, menghibur, mempengaruhi dan dilakukan di depan audiens dengan metode dan struktur tertentu.</li><br>
+                            <li>Melatih kemampuan konten creator, mendokumentasikan dan memirsa berbagai kegiatan yang diadakan di dalam maupun di luar SMK Mutiara Ilmu Makassar.</li><br>
+                            <h5 class="text-success">Jadwal</h5>
+                            <p>Hari Selasa dan Rabu, Pukul 16:00 WITA</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-success">Kegiatan Kami</h5>
+                            <p>Berikut beberapa kegiatan yang kami lakukan:</p>
+                            <ul>
+                                <li>Membuat artikel</li>
+                                <li>Mengarang puisi</li>
+                                <li>Broadcasting</li>
+                                <li>Content hiburan dan edukasi</li>
+                            </ul>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <img src="images/exis/1.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/exis/2.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/exis/3.jpg" class="img-fluid rounded mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section sec-features" id="fitur">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature d-flex">
+                        <span class="bi-search"></span>
+                        <div>
+                            <h3>Pencarian Ekskul</h3>
+                            <p>Temukan ekstrakurikuler yang sesuai dengan minat dan bakatmu dengan mudah.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature d-flex">
+                        <span class="bi-pencil-square"></span>
+                        <div>
+                            <h3>Pendaftaran Online</h3>
+                            <p>Daftar ekstrakurikuler secara online tanpa perlu antre dan mengisi formulir kertas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature d-flex">
+                        <span class="bi-bell"></span>
+                        <div>
+                            <h3>Notifikasi Status</h3>
+                            <p>Dapatkan pemberitahuan status pendaftaran secara real-time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section sec-services" id="tentang">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-5 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="heading text-success">Tentang Kami</h2>
+                    <p>Sistem Informasi Ekstrakurikuler Mutiara Ilmu</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/admin.svg" style="width: 100%; max-width: 600px;" alt="Ilustrasi Ekstrakurikuler">
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-weight-bold">Tentang Sistem</h4>
+                    <p style="font-size: 16px;">
+                        Sistem Informasi Ekstrakurikuler ini dirancang untuk mempermudah pengelolaan kegiatan ekstrakurikuler 
+                        di lingkungan sekolah. Admin dapat mengatur ekskul dan pengguna, sementara siswa bisa mendaftar dan melihat informasi ekskul dengan mudah.
+                    </p>
+                    <p style="font-size: 16px;">
+                        Dengan tampilan yang intuitif dan data yang real-time, sistem ini diharapkan dapat meningkatkan partisipasi dan koordinasi antara pihak sekolah dan siswa.
+                    </p>
+                    <a href="register.html" class="btn btn-success mt-3">Daftar Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="site-footer">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="#">Ekstrakurikuler Mutiara Ilmu</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/flatpickr.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/glightbox.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+</body>
+</html>

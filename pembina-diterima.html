@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pendaftar Diterima - Ekstrakurikuler Mutiara Ilmu</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="pembina-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="pembina-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <i class="fas fa-user-shield text-success fa-lg"></i>
+                            <span id="pembinaNavName" class="fw-bold text-dark">Budi Santoso (ART MEDIA)</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pembina-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pembina-pendaftar.html">
+                            <i class="fas fa-list fa-lg"></i>
+                            <span class="menu-title ps-3">Pendaftar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="pembina-diterima.html">
+                            <i class="fas fa-users fa-lg"></i>
+                            <span class="menu-title ps-3">Pendaftar Diterima</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col grid-margin stretch-card">
+                            <div class="card shadow-sm border-0 rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                                        <div>
+                                            <h4 class="card-title mb-1 fw-bold text-dark">Data Pendaftar Diterima - <span id="titleNamaEkskul" class="text-success">ART MEDIA</span></h4>
+                                            <p class="text-muted small mb-0">Daftar siswa yang telah resmi disetujui sebagai anggota ekstrakurikuler</p>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <a href="cetak-laporan-diterima.html" class="btn btn-success text-white btn-sm shadow-sm">
+                                                <i class="fas fa-print me-1"></i> Cetak Laporan Anggota Diterima
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filter Toolbar -->
+                                    <div class="row mb-3 g-2 align-items-center bg-light p-3 rounded-3 mx-0">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-white"><i class="fas fa-search text-muted"></i></span>
+                                                <input type="text" id="searchInput" class="form-control" placeholder="Cari nama, NIS, kelas, atau no HP...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select id="filterKelas" class="form-select">
+                                                <option value="">-- Semua Kelas --</option>
+                                                <option value="X">Kelas X</option>
+                                                <option value="XI">Kelas XI</option>
+                                                <option value="XII">Kelas XII</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 text-md-end text-muted small">
+                                            Total: <strong id="countDiterima" class="text-success">0</strong> Siswa
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive pt-2">
+                                        <table class="table table-hover align-middle">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="text-center" width="5%">No</th>
+                                                    <th width="15%">NIS</th>
+                                                    <th width="25%">Nama Siswa</th>
+                                                    <th width="15%">Kelas</th>
+                                                    <th width="15%">No HP / WA</th>
+                                                    <th width="20%">Alamat</th>
+                                                    <th class="text-center" width="5%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="acceptedTableBody">
+                                                <!-- Dynamic Content -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Detail Siswa -->
+    <div class="modal fade" id="modalDetailAccepted" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-user-check text-success me-2"></i>Data Anggota Resmi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img id="detailFoto" src="assets/images/blankuser.jpg" alt="Foto Siswa" class="img-fluid rounded-3 shadow-sm mb-3" style="width: 140px; height: 180px; object-fit: cover;">
+                    <h5 id="detailNama" class="fw-bold mb-1">Nama Siswa</h5>
+                    <p id="detailNisKelas" class="text-muted small mb-3">NIS: 22231001 | XII RPL 1</p>
+
+                    <div class="text-start p-3 bg-light rounded-3 mb-3 small">
+                        <div class="mb-2"><strong>Jenis Kelamin:</strong> <span id="detailKelamin">-</span></div>
+                        <div class="mb-2"><strong>Nomor WhatsApp:</strong> <span id="detailNoHp">-</span></div>
+                        <div class="mb-2"><strong>Alamat:</strong> <span id="detailAlamat">-</span></div>
+                        <div><strong>Status:</strong> <span class="badge bg-success">DITERIMA</span></div>
+                    </div>
+                </div>
+                <div class="modal-footer border-top justify-content-center">
+                    <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        let activeEkskulId = sessionStorage.getItem('mutil_pembina_ekskul_id') || '1';
+
+        function renderAccepted() {
+            if (!window.MutilStore) return;
+            const ekskul = window.MutilStore.getEkskulById(activeEkskulId);
+            if (!ekskul) return;
+
+            document.getElementById('titleNamaEkskul').innerText = ekskul.nama_ekskul;
+            document.getElementById('pembinaNavName').innerText = ekskul.pembina + ' (' + ekskul.nama_ekskul + ')';
+
+            const accepted = window.MutilStore.getPendaftarByEkskul(activeEkskulId, 'diterima');
+            const search = (document.getElementById('searchInput').value || '').toLowerCase();
+            const filterKls = document.getElementById('filterKelas').value;
+
+            const filtered = accepted.filter(p => {
+                const matchSearch = p.nama_lengkap.toLowerCase().includes(search) ||
+                                    p.nis.includes(search) ||
+                                    p.kelas.toLowerCase().includes(search) ||
+                                    (p.no_hp && p.no_hp.includes(search));
+                const matchKelas = !filterKls || p.kelas.startsWith(filterKls);
+                return matchSearch && matchKelas;
+            });
+
+            document.getElementById('countDiterima').innerText = filtered.length;
+            const tbody = document.getElementById('acceptedTableBody');
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">Tidak ditemukan data siswa yang diterima.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map((p, idx) => `
+                <tr>
+                    <td class="text-center fw-bold">${idx + 1}</td>
+                    <td><code>${p.nis}</code></td>
+                    <td>
+                        <strong class="text-dark">${p.nama_lengkap}</strong><br>
+                        <small class="text-muted"><i class="fas fa-venus-mars me-1"></i>${p.jenis_kelamin}</small>
+                    </td>
+                    <td><span class="badge bg-light text-dark border">${p.kelas}</span></td>
+                    <td>
+                        <a href="https://wa.me/${(p.no_hp || '').replace(/[^0-9]/g, '')}" target="_blank" class="text-decoration-none text-success">
+                            <i class="fab fa-whatsapp me-1"></i> ${p.no_hp || '-'}
+                        </a>
+                    </td>
+                    <td><small class="text-muted">${p.alamat || '-'}</small></td>
+                    <td class="text-center">
+                        <button type="button" class="btn btn-sm btn-info text-white" title="Lihat Profil" onclick="showAcceptedDetail('${p.id}')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        window.showAcceptedDetail = function(id) {
+            const accepted = window.MutilStore.getPendaftarByEkskul(activeEkskulId, 'diterima');
+            const p = accepted.find(item => item.id === id);
+            if (!p) return;
+
+            document.getElementById('detailNama').innerText = p.nama_lengkap;
+            document.getElementById('detailNisKelas').innerText = `NIS: ${p.nis} | Kelas: ${p.kelas}`;
+            document.getElementById('detailKelamin').innerText = p.jenis_kelamin;
+            document.getElementById('detailNoHp').innerText = p.no_hp || '-';
+            document.getElementById('detailAlamat').innerText = p.alamat || '-';
+            document.getElementById('detailFoto').src = p.foto || 'assets/images/blankuser.jpg';
+
+            const modal = new bootstrap.Modal(document.getElementById('modalDetailAccepted'));
+            modal.show();
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAccepted();
+            document.getElementById('searchInput').addEventListener('input', renderAccepted);
+            document.getElementById('filterKelas').addEventListener('change', renderAccepted);
+        });
+    </script>
+</body>
+</html>

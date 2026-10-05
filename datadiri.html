@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Diri Siswa - Ekstrakurikuler Mutiara Ilmu</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="siswa-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="siswa-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <img id="navUserPhoto" src="assets/images/blankuser.jpg" alt="profile" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #57B657;" />
+                            <span id="navUserName" class="fw-bold text-dark">Muhammad Fadhil</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="siswa-datadiri.html">
+                                <i class="fas fa-id-card text-success me-2"></i> Data Diri 
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="siswa-datadiri.html">
+                            <i class="fas fa-user-circle fa-lg"></i>
+                            <span class="menu-title ps-3">Data Diri</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-daftarekskul.html">
+                            <i class="fas fa-clipboard-list fa-lg"></i>
+                            <span class="menu-title ps-3">Ekstrakurikuler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-status.html">
+                            <i class="fas fa-history fa-lg"></i>
+                            <span class="menu-title ps-3">Status Pendaftar</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card shadow-sm border-0 rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                                        <div>
+                                            <h4 class="card-title mb-1 fw-bold text-dark">Data Diri Siswa</h4>
+                                            <p class="text-muted small mb-0">Informasi biodata terverifikasi untuk berkas pendaftaran ekstrakurikuler</p>
+                                        </div>
+                                        <button class="btn btn-warning text-white btn-sm px-3" data-bs-toggle="modal" data-bs-target="#editDataDiriModal">
+                                            <i class="fas fa-edit me-1"></i> Update Data Diri
+                                        </button>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 mb-4 text-center text-md-start">
+                                            <div class="p-2 border rounded-3 bg-light d-inline-block w-100 text-center mb-3">
+                                                <img id="viewUserPhoto" src="assets/images/blankuser.jpg" alt="Foto Profil" class="img-fluid rounded-3 shadow-sm" style="width: 220px; height: 280px; object-fit: cover;">
+                                            </div>
+                                            <div class="kontak-section">
+                                                <h5 class="mb-3 fw-bold text-dark"><i class="fas fa-address-book text-success me-2"></i>Kontak</h5>
+                                                <div class="form-group mb-3">
+                                                    <label class="small text-muted fw-bold">Email Akun</label>
+                                                    <input type="email" id="viewEmail" class="form-control bg-light" value="fadhil@siswa.mutil.sch.id" readonly>
+                                                </div>
+                                                <div class="form-group mb-3">
+                                                    <label class="small text-muted fw-bold">Nomor WhatsApp / HP</label>
+                                                    <input type="text" id="viewNoHp" class="form-control bg-light" value="081234567890" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <div class="biodata-section ps-md-3">
+                                                <h5 class="mb-3 fw-bold text-dark"><i class="fas fa-id-card text-success me-2"></i>Biodata Pribadi</h5>
+                                                
+                                                <div class="form-group mb-3">
+                                                    <label class="small text-muted fw-bold">Nama Lengkap Siswa</label>
+                                                    <input type="text" id="viewNamaLengkap" class="form-control form-control-lg bg-light" value="Muhammad Fadhil Al-Ghifari" readonly>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group mb-3">
+                                                        <label class="small text-muted fw-bold">Nomor Induk Siswa (NIS)</label>
+                                                        <input type="text" id="viewNis" class="form-control bg-light" value="22231001" readonly>
+                                                    </div>
+                                                    <div class="col-md-6 form-group mb-3">
+                                                        <label class="small text-muted fw-bold">Kelas & Jurusan</label>
+                                                        <input type="text" id="viewKelas" class="form-control bg-light" value="XII RPL 1" readonly>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mb-3">
+                                                    <label class="small text-muted fw-bold">Jenis Kelamin</label>
+                                                    <input type="text" id="viewJenisKelamin" class="form-control bg-light" value="Laki-Laki" readonly>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <label class="small text-muted fw-bold">Alamat Lengkap</label>
+                                                    <textarea id="viewAlamat" class="form-control bg-light" rows="3" readonly>Jl. Perintis Kemerdekaan KM 9, Tamalanrea, Makassar</textarea>
+                                                </div>
+
+                                                <div class="alert alert-success d-flex align-items-center gap-3 rounded-3 py-3">
+                                                    <i class="fas fa-circle-check fa-2x text-success"></i>
+                                                    <div>
+                                                        <strong>Status Biodata: Lengkap & Terverifikasi</strong>
+                                                        <p class="mb-0 small text-muted">Data diri Anda telah siap digunakan untuk pendaftaran ekstrakurikuler.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit Data Diri -->
+    <div class="modal fade" id="editDataDiriModal" tabindex="-1" aria-labelledby="editDataDiriModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="editDataDiriModalLabel"><i class="fas fa-edit text-warning me-2"></i>Update Data Diri Siswa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formUpdateDataDiri">
+                    <div class="modal-body p-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Nama Lengkap</label>
+                                <input type="text" id="editNama" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">NIS (Nomor Induk Siswa)</label>
+                                <input type="number" id="editNis" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Kelas</label>
+                                <select id="editKelas" class="form-control" required>
+                                    <option value="X RPL 1">X RPL 1</option>
+                                    <option value="X RPL 2">X RPL 2</option>
+                                    <option value="X TKJ 1">X TKJ 1</option>
+                                    <option value="XI RPL 1">XI RPL 1</option>
+                                    <option value="XI TKJ 2">XI TKJ 2</option>
+                                    <option value="XI MM 1">XI MM 1</option>
+                                    <option value="XII RPL 1">XII RPL 1</option>
+                                    <option value="XII TKJ 1">XII TKJ 1</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Jenis Kelamin</label>
+                                <select id="editJenisKelamin" class="form-control" required>
+                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Nomor WhatsApp / HP</label>
+                                <input type="text" id="editNoHp" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Pilih Avatar Foto (Preset Demo)</label>
+                                <select id="editFotoSelect" class="form-control">
+                                    <option value="assets/images/blankuser.jpg" selected>Foto Blank / Default (User)</option>
+                                    <option value="assets/images/siswa/68282d975fabf_arman.jpg">Foto Siswa 1 (Arman)</option>
+                                    <option value="assets/images/siswa/68286c52c5854_20250417_095546.jpg">Foto Siswa 2 (Siswi)</option>
+                                    <option value="assets/images/siswa/68039ac16d940.jpg">Foto Siswa 3 (Paskib/Formal)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Alamat Lengkap</label>
+                            <textarea id="editAlamat" class="form-control" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-success text-white px-4">
+                            <i class="fas fa-save me-1"></i> Simpan Perubahan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        function loadData() {
+            if (window.MutilStore) {
+                const user = window.MutilStore.getCurrentUser();
+                if (user) {
+                    document.getElementById('viewNamaLengkap').value = user.nama_lengkap || '';
+                    document.getElementById('viewNis').value = user.nis || '';
+                    document.getElementById('viewKelas').value = user.kelas || '';
+                    document.getElementById('viewJenisKelamin').value = user.jenis_kelamin || '';
+                    document.getElementById('viewAlamat').value = user.alamat || '';
+                    document.getElementById('viewEmail').value = user.email || '';
+                    document.getElementById('viewNoHp').value = user.no_hp || '';
+                    if (user.foto) {
+                        document.getElementById('viewUserPhoto').src = user.foto;
+                        document.getElementById('navUserPhoto').src = user.foto;
+                        if (document.getElementById('editFotoSelect')) {
+                            document.getElementById('editFotoSelect').value = user.foto;
+                        }
+                    }
+                    document.getElementById('navUserName').innerText = (user.nama_lengkap || user.username).split(' ')[0];
+
+                    // Fill modal form
+                    document.getElementById('editNama').value = user.nama_lengkap || '';
+                    document.getElementById('editNis').value = user.nis || '';
+                    document.getElementById('editKelas').value = user.kelas || 'XII RPL 1';
+                    document.getElementById('editJenisKelamin').value = user.jenis_kelamin || 'Laki-Laki';
+                    document.getElementById('editNoHp').value = user.no_hp || '';
+                    document.getElementById('editAlamat').value = user.alamat || '';
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadData);
+
+        document.getElementById('formUpdateDataDiri').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const updated = {
+                nama_lengkap: document.getElementById('editNama').value,
+                nis: document.getElementById('editNis').value,
+                kelas: document.getElementById('editKelas').value,
+                jenis_kelamin: document.getElementById('editJenisKelamin').value,
+                no_hp: document.getElementById('editNoHp').value,
+                alamat: document.getElementById('editAlamat').value,
+                foto: document.getElementById('editFotoSelect').value
+            };
+            if (window.MutilStore) {
+                window.MutilStore.updateCurrentUser(updated);
+            }
+            // Close modal
+            const modalEl = document.getElementById('editDataDiriModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            if (modal) modal.hide();
+
+            loadData();
+            window.showMutilToast('Data diri berhasil diperbarui!');
+        });
+    </script>
+</body>
+</html>

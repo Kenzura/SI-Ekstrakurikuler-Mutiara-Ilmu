@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pendaftaran Ekstrakurikuler - SMK Mutiara Ilmu</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="siswa-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="siswa-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <img id="navUserPhoto" src="assets/images/blankuser.jpg" alt="profile" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #57B657;" />
+                            <span id="navUserName" class="fw-bold text-dark">Muhammad Fadhil</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="siswa-datadiri.html">
+                                <i class="fas fa-id-card text-success me-2"></i> Data Diri 
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-datadiri.html">
+                            <i class="fas fa-user-circle fa-lg"></i>
+                            <span class="menu-title ps-3">Data Diri</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="siswa-daftarekskul.html">
+                            <i class="fas fa-clipboard-list fa-lg"></i>
+                            <span class="menu-title ps-3">Ekstrakurikuler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="siswa-status.html">
+                            <i class="fas fa-history fa-lg"></i>
+                            <span class="menu-title ps-3">Status Pendaftar</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card shadow-sm border-0 rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                                        <div>
+                                            <h4 class="card-title mb-1 fw-bold text-dark">Formulir Pendaftaran Ekstrakurikuler</h4>
+                                            <p class="text-muted small mb-0">Pilih kegiatan ekstrakurikuler yang sesuai dengan minat dan bakat Anda</p>
+                                        </div>
+                                        <a href="siswa-status.html" class="btn btn-outline-success btn-sm">
+                                            <i class="fas fa-eye me-1"></i> Lihat Status Pendaftaran
+                                        </a>
+                                    </div>
+
+                                    <!-- Alert Notice -->
+                                    <div class="alert alert-info d-flex align-items-center gap-3 rounded-3 mb-4">
+                                        <i class="fas fa-info-circle fa-2x text-info"></i>
+                                        <div class="small">
+                                            <strong>Ketentuan Pendaftaran:</strong>
+                                            Siswa wajib memilih minimal 1 ekstrakurikuler utama, dan dapat menambahkan 1 ekstrakurikuler pilihan ke-2 (opsional). Pastikan Anda memberikan alasan yang jelas agar memudahkan verifikasi pembina.
+                                        </div>
+                                    </div>
+
+                                    <form id="formPendaftaranEkskul">
+                                        <div class="row">
+                                            <!-- Pilihan 1 -->
+                                            <div class="col-md-6 mb-4">
+                                                <div class="p-3 border rounded-3 bg-light h-100">
+                                                    <h5 class="fw-bold text-success mb-3">
+                                                        <i class="fas fa-star me-2"></i>Pilihan Utama (Ekskul 1) *
+                                                    </h5>
+                                                    <div class="form-group mb-3">
+                                                        <label class="fw-bold small text-muted">Ekstrakurikuler</label>
+                                                        <select id="selectEkskul1" class="form-control form-control-lg bg-white" required>
+                                                            <option value="" disabled selected>-- Pilih Ekstrakurikuler 1 --</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group mb-0">
+                                                        <label class="fw-bold small text-muted">Alasan Memilih Ekskul 1</label>
+                                                        <textarea id="alasanEkskul1" class="form-control bg-white" rows="4" placeholder="Tuliskan motivasi, minat, atau pengalaman Anda..." required></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pilihan 2 -->
+                                            <div class="col-md-6 mb-4">
+                                                <div class="p-3 border rounded-3 bg-light h-100">
+                                                    <h5 class="fw-bold text-primary mb-3">
+                                                        <i class="fas fa-bookmark me-2"></i>Pilihan Cadangan (Ekskul 2) - Opsional
+                                                    </h5>
+                                                    <div class="form-group mb-3">
+                                                        <label class="fw-bold small text-muted">Ekstrakurikuler</label>
+                                                        <select id="selectEkskul2" class="form-control form-control-lg bg-white">
+                                                            <option value="">-- Tidak Memilih Ekskul 2 --</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group mb-0">
+                                                        <label class="fw-bold small text-muted">Alasan Memilih Ekskul 2</label>
+                                                        <textarea id="alasanEkskul2" class="form-control bg-white" rows="4" placeholder="Tuliskan motivasi untuk pilihan kedua jika ada..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center mt-3">
+                                            <button type="submit" class="btn btn-success btn-lg px-5 py-3 text-white fw-bold shadow-sm">
+                                                <i class="fas fa-paper-plane me-2"></i> Simpan & Kirim Pendaftaran
+                                            </button>
+                                        </div>
+                                    </form>
+
+                                    <!-- Catalog of All Ekskuls -->
+                                    <h4 class="fw-bold mt-5 mb-3 text-dark">Katalog Ekstrakurikuler Tersedia</h4>
+                                    <div class="row" id="ekskulCatalogGrid">
+                                        <!-- Rendered dynamically -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.MutilStore) return;
+            const ekskuls = window.MutilStore.getEkskuls();
+            const user = window.MutilStore.getCurrentUser();
+
+            // Setup profile nav
+            if (user) {
+                document.getElementById('navUserName').innerText = (user.nama_lengkap || user.username).split(' ')[0];
+                if (user.foto) document.getElementById('navUserPhoto').src = user.foto;
+            }
+
+            // Populate selects
+            const sel1 = document.getElementById('selectEkskul1');
+            const sel2 = document.getElementById('selectEkskul2');
+
+            ekskuls.forEach(e => {
+                const opt1 = document.createElement('option');
+                opt1.value = e.id;
+                opt1.innerText = e.nama_ekskul + (e.status === 'nonaktif' ? ' (Ditutup)' : '');
+                if (e.status === 'nonaktif') opt1.disabled = true;
+                sel1.appendChild(opt1);
+
+                const opt2 = document.createElement('option');
+                opt2.value = e.id;
+                opt2.innerText = e.nama_ekskul + (e.status === 'nonaktif' ? ' (Ditutup)' : '');
+                if (e.status === 'nonaktif') opt2.disabled = true;
+                sel2.appendChild(opt2);
+            });
+
+            // Set current values if already registered
+            if (user && user.pendaftaran) {
+                if (user.pendaftaran.ekskul_1) {
+                    sel1.value = user.pendaftaran.ekskul_1;
+                    document.getElementById('alasanEkskul1').value = user.pendaftaran.alasan_1 || '';
+                }
+                if (user.pendaftaran.ekskul_2) {
+                    sel2.value = user.pendaftaran.ekskul_2;
+                    document.getElementById('alasanEkskul2').value = user.pendaftaran.alasan_2 || '';
+                }
+            }
+
+            // Render Catalog Grid
+            const grid = document.getElementById('ekskulCatalogGrid');
+            grid.innerHTML = ekskuls.map(e => `
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border shadow-sm rounded-3 overflow-hidden">
+                        <img src="${e.gambar}" class="card-img-top" alt="${e.nama_ekskul}" style="height: 160px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="fw-bold mb-0 text-dark">${e.nama_ekskul}</h6>
+                                <span class="badge ${e.status === 'aktif' ? 'bg-success' : 'bg-secondary'} small">
+                                    ${e.status === 'aktif' ? 'Buka' : 'Ditutup'}
+                                </span>
+                            </div>
+                            <p class="text-muted small mb-2"><i class="fas fa-user-tie text-success me-1"></i> Pembina: ${e.pembina}</p>
+                            <p class="text-muted small mb-3"><i class="fas fa-clock text-warning me-1"></i> ${e.hari}</p>
+                            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                                <span class="small text-muted">Kuota: <strong>${e.kuota} Siswa</strong></span>
+                                <button type="button" class="btn btn-sm btn-outline-success" onclick="selectThisEkskul('${e.id}')" ${e.status === 'nonaktif' ? 'disabled' : ''}>
+                                    Pilih Ekskul
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        });
+
+        window.selectThisEkskul = function(id) {
+            const sel1 = document.getElementById('selectEkskul1');
+            sel1.value = id;
+            window.showMutilToast('Ekstrakurikuler berhasil dipilih sebagai Pilihan 1! Silakan lengkapi alasan pendaftaran.');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        };
+
+        document.getElementById('formPendaftaranEkskul').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id1 = document.getElementById('selectEkskul1').value;
+            const al1 = document.getElementById('alasanEkskul1').value;
+            const id2 = document.getElementById('selectEkskul2').value || null;
+            const al2 = document.getElementById('alasanEkskul2').value || '';
+
+            if (id1 === id2 && id1) {
+                alert('Pilihan ekskul 1 dan 2 tidak boleh sama!');
+                return;
+            }
+
+            if (window.MutilStore) {
+                window.MutilStore.registerEkskul(id1, al1, id2, al2);
+            }
+            window.showMutilToast('Pendaftaran ekstrakurikuler berhasil dikirim!');
+            setTimeout(function() {
+                window.location.href = 'siswa-status.html';
+            }, 800);
+        });
+    </script>
+</body>
+</html>

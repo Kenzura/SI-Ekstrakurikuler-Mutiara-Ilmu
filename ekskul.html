@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Kelola Ekstrakurikuler - Admin Mutiara Ilmu</title>
+    <link rel="stylesheet" href="assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo-nav.css">
+    <link rel="shortcut icon" href="assets/images/logo1.png" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- Top Navbar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo me-5" href="admin-dashboard.html"><img src="assets/images/logo.png" class="me-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="admin-dashboard.html"><img src="assets/images/lgo.png" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+                            <i class="fas fa-crown text-warning fa-lg"></i>
+                            <span class="fw-bold text-dark">Super Administrator</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="login.html">
+                                <i class="fas fa-power-off text-danger me-2"></i> Logout 
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Body Wrapper -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- Sidebar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-dashboard.html">
+                            <i class="fas fa-home fa-lg"></i>
+                            <span class="menu-title ps-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="admin-ekskul.html">
+                            <i class="fas fa-list fa-lg"></i>
+                            <span class="menu-title ps-3">Ekstrakurikuler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-kelola.html">
+                            <i class="fas fa-users-gear fa-lg"></i>
+                            <span class="menu-title ps-3">Admin / Pembina</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-pengguna.html">
+                            <i class="fas fa-user-graduate fa-lg"></i>
+                            <span class="menu-title ps-3">Data Pengguna</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                        <div>
+                            <h3 class="fw-bold mb-1 text-dark">Kelola Cabang Ekstrakurikuler</h3>
+                            <p class="text-muted small mb-0">Daftar seluruh kegiatan ekstrakurikuler yang terdaftar di sekolah</p>
+                        </div>
+                        <button type="button" class="btn btn-success text-white shadow-sm" data-bs-toggle="modal" data-bs-target="#tambahEskulModal">
+                            <i class="fas fa-plus me-1"></i> Tambah Ekstrakurikuler
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <div class="col grid-margin stretch-card">
+                            <div class="card shadow-sm border-0 rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="text-center" width="6%">No</th>
+                                                    <th width="30%">Nama Ekstrakurikuler</th>
+                                                    <th width="25%">Nama Pembina</th>
+                                                    <th width="15%">Status</th>
+                                                    <th width="12%">Kuota</th>
+                                                    <th class="text-center" width="12%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="ekskulAdminTableBody">
+                                                <!-- Dynamic Content -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer bg-white">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Ekstrakurikuler SMK Mutiara Ilmu &copy; 2026. All rights reserved.</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tambah Ekskul -->
+    <div class="modal fade" id="tambahEskulModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-plus text-success me-2"></i>Tambah Ekstrakurikuler Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formTambahEkskul">
+                    <div class="modal-body p-4">
+                        <div class="form-group mb-3">
+                            <label class="fw-bold small">Nama Ekstrakurikuler</label>
+                            <input type="text" id="tambahNama" class="form-control" placeholder="Contoh: ROBOTIK / PMR" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="fw-bold small">Nama Pembina</label>
+                            <input type="text" id="tambahPembina" class="form-control" placeholder="Nama lengkap pembina beserta gelar" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-3">
+                                <label class="fw-bold small">Kuota Siswa</label>
+                                <input type="number" id="tambahKuota" class="form-control" value="30" required>
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label class="fw-bold small">Jadwal Latihan</label>
+                                <input type="text" id="tambahJadwal" class="form-control" value="Hari Sabtu, 09:00 WITA" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-success text-white px-4">Simpan Ekstrakurikuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit Ekskul -->
+    <div class="modal fade" id="editEskulModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-4 border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-pen-to-square text-warning me-2"></i>Edit Ekstrakurikuler</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formEditEkskul">
+                    <input type="hidden" id="editEkskulId">
+                    <div class="modal-body p-4">
+                        <div class="form-group mb-3">
+                            <label class="fw-bold small">Nama Ekstrakurikuler</label>
+                            <input type="text" id="editNamaEkskul" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-warning text-white px-4">Simpan Perubahan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/data-store.js"></script>
+    <script src="assets/js/demo-nav.js"></script>
+    <script>
+        function renderEkskuls() {
+            if (!window.MutilStore) return;
+            const ekskuls = window.MutilStore.getEkskuls();
+            const tbody = document.getElementById('ekskulAdminTableBody');
+
+            tbody.innerHTML = ekskuls.map((e, idx) => `
+                <tr>
+                    <td class="text-center fw-bold">${idx + 1}</td>
+                    <td>
+                        <strong class="text-dark">${e.nama_ekskul}</strong><br>
+                        <small class="text-muted"><i class="fas fa-clock me-1"></i>${e.hari}</small>
+                    </td>
+                    <td>${e.pembina}</td>
+                    <td>
+                        <span class="badge ${e.status === 'aktif' ? 'bg-success' : 'bg-secondary'} px-2 py-1">
+                            ${e.status === 'aktif' ? 'Aktif' : 'Ditutup'}
+                        </span>
+                    </td>
+                    <td><strong>${e.kuota}</strong> Siswa</td>
+                    <td class="text-center">
+                        <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-warning text-white" title="Edit" onclick="openEditModal('${e.id}', '${e.nama_ekskul}')">
+                                <i class="fas fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger text-white" title="Hapus" onclick="deleteEkskulItem('${e.id}', '${e.nama_ekskul}')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        window.openEditModal = function(id, nama) {
+            document.getElementById('editEkskulId').value = id;
+            document.getElementById('editNamaEkskul').value = nama;
+            const modal = new bootstrap.Modal(document.getElementById('editEkskulModal'));
+            modal.show();
+        };
+
+        window.deleteEkskulItem = function(id, nama) {
+            if (confirm(`Yakin ingin menghapus ekstrakurikuler "${nama}"?`)) {
+                window.MutilStore.deleteEkskul(id);
+                renderEkskuls();
+                window.showMutilToast(`Ekstrakurikuler "${nama}" berhasil dihapus.`);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderEkskuls();
+
+            // Handle Tambah
+            document.getElementById('formTambahEkskul').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nama = document.getElementById('tambahNama').value;
+                const pembina = document.getElementById('tambahPembina').value;
+                const kuota = document.getElementById('tambahKuota').value;
+                const jadwal = document.getElementById('tambahJadwal').value;
+
+                window.MutilStore.addEkskul(nama, pembina, jadwal, kuota);
+                
+                const modalEl = document.getElementById('tambahEskulModal');
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+                document.getElementById('formTambahEkskul').reset();
+
+                renderEkskuls();
+                window.showMutilToast(`Ekstrakurikuler "${nama}" berhasil ditambahkan!`);
+            });
+
+            // Handle Edit
+            document.getElementById('formEditEkskul').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const id = document.getElementById('editEkskulId').value;
+                const nama = document.getElementById('editNamaEkskul').value;
+
+                window.MutilStore.editEkskul(id, nama);
+
+                const modalEl = document.getElementById('editEkskulModal');
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+
+                renderEkskuls();
+                window.showMutilToast(`Ekstrakurikuler berhasil diperbarui!`);
+            });
+        });
+    </script>
+</body>
+</html>
